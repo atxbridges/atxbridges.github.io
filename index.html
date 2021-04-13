@@ -33,6 +33,16 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
   <script src="js/format-google-calendar.min.js"></script>
+  <style>
+      .event_list li:after {
+      content: "";
+      display: block;
+      height: 5px;
+      width: 40%;
+      margin: 10px;
+      background: #007397;
+    }
+  </style>
 
 </head>
 
@@ -314,9 +324,9 @@
                   <br>
                    <div class="row" align="center" style="overflow: visible;">
                      <!-- style="color: white" -->
-                     <ul id="events-upcoming" style="list-style-type: none;">
+                     <ul id="events-upcoming" class="event_list" style="list-style-type: none;">
                      </ul>
-                     <ul id="events-past" style="list-style-type: none;">
+                     <ul id="events-past" class="event_list" style="list-style-type: none;">
                      </ul>
                      <!-- Embeded calendar (ugly) -->
                       <!-- <div class="row" align="center">
@@ -329,7 +339,8 @@
                    </div>
                    <!-- <button class="submitform" onclick=" window.open('https://calendar.google.com/calendar/u/1?cid=czM1MnEycHFzZmN0dDAzMzg2dHE2a2dyaGdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ','_blank')"> Add google calendar </button> -->
                    <!-- <button> Add google calendar </button> -->
-                   <a class="smoothscroll button stroke" href="https://calendar.google.com/calendar/u/1?cid=czM1MnEycHFzZmN0dDAzMzg2dHE2a2dyaGdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="_blank">
+                   <!-- <a class="smoothscroll button stroke" href="https://calendar.google.com/calendar/u/1?cid=czM1MnEycHFzZmN0dDAzMzg2dHE2a2dyaGdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="_blank"> -->
+                   <a class="smoothscroll button stroke" href="https://calendar.google.com/calendar/u/1?cid=Y19lZHBvcTE3dTA1dmh1bmM3amJjZG0wZWgzY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t" target="_blank">
                          Add google calendar
                    </a>
                   <br>
@@ -371,7 +382,7 @@
 		   		<!-- <h1>See Our Featured Projects.</h1> -->
 		   		<h1>See Our Smiling Faces.</h1>
 
-		   		<p class="lead">Lorem ipsum Dolor adipisicing nostrud et aute Excepteur amet commodo ea dolore irure esse Duis nulla sint fugiat cillum ullamco proident aliquip quis qui voluptate dolore veniam Ut laborum non est in officia.</p>
+		   		<p class="lead">See a little bit of what it’s like to be a part of Bridges here in Austn...</p>
 	   		</div>
 	   	</div> <!-- end row section-intro -->
 
@@ -676,12 +687,13 @@
     formatGoogleCalendar.init({
       calendarUrl:
       // 'https://calendar.google.com/calendar/u/1?cid=czM1MnEycHFzZmN0dDAzMzg2dHE2a2dyaGdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ',
-      'https://www.googleapis.com/calendar/v3/calendars/s352q2pqsfctt03386tq6kgrhg@group.calendar.google.com/events?key=AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY',
+      'https://www.googleapis.com/calendar/v3/calendars/c_edpoq17u05vhunc7jbcdm0eh3c@group.calendar.google.com/events?key=AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY',
       // 'https://www.googleapis.com/calendar/v3/calendars/milan.kacurak@gmail.com/events?key=AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY',
       upcomingHeading: '<h2>Upcoming events</h2>', // style="color: white"
         pastHeading: '<h2>Past events</h2>',
         pastTopN: 3,
-        upcomingTopN: 3
+        upcomingTopN: 3,
+        format: ["<h3 style='color:black'>", '*summary*', '</h3><p>', '*date*', ' <br/>@ ', '*location*', '<br/><i>', '*description*', "</i></p>"]
     });
    } );
    </script>
