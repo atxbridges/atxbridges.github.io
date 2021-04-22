@@ -20,6 +20,7 @@
    <link rel="stylesheet" href="css/base.css">
    <link rel="stylesheet" href="css/vendor.css">
    <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/timeline.css">
    <link rel="stylesheet" href="css/column.css">
    <link rel="stylesheet" href="css/my.css">
 
@@ -37,9 +38,9 @@
       .event_list li:after {
       content: "";
       display: block;
-      height: 5px;
-      width: 40%;
-      margin: 10px;
+      height: 2px;
+      width: 80%;
+      margin: 5px;
       background: #007397;
     }
   </style>
@@ -294,12 +295,16 @@
    </section> <!-- end services -->
 
 
+
+
+
    <div class="background">
-   <section id="events" class="blur">
+   <section id="events">
+     <div class="overlay"></div>
         <div class="row section-intro animate-this">
            <div class="col-twelve" style="overflow: visible;">
              <h3 style="color: black;">Events</h3>
-             <h1>Never Miss Out.</h1>
+             <!-- <h1 style="color: black;">Never Miss Out.</h1> -->
 
                <div class="row" style="overflow: visible; background: rgba(255, 255, 255, 0.8); ">
                    <!-- <div class="alert alert-primary" role="alert"> -->
@@ -479,7 +484,7 @@
    		<div class="col-seven tab-full animate-this">
 
    			<h5>Send Us A Message
-           Let us know how to get in touch with you by filling out this quick survey.
+           and Let us know how to get in touch with you by filling out this quick survey.
         </h5>
 
         <!-- <a href="https://atxbridges.typeform.com/to/jjpPND0u" target="_blank" class="button submitform">goto survey</a> -->
@@ -680,8 +685,8 @@
       // 'https://calendar.google.com/calendar/u/1?cid=czM1MnEycHFzZmN0dDAzMzg2dHE2a2dyaGdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ',
       'https://www.googleapis.com/calendar/v3/calendars/c_edpoq17u05vhunc7jbcdm0eh3c@group.calendar.google.com/events?key=AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY',
       // 'https://www.googleapis.com/calendar/v3/calendars/milan.kacurak@gmail.com/events?key=AIzaSyCR3-ptjHE-_douJsn8o20oRwkxt-zHStY',
-      upcomingHeading: '<h2>Upcoming events</h2>', // style="color: white"
-        pastHeading: '<h2>Past events</h2>',
+      upcomingHeading: '<span style="background:#007397; color:white">&nbsp;Upcoming&nbsp;</span>', // style="color: white"
+        pastHeading: '<span style="background:#007397; color:white">&nbsp;Past&nbsp;</span>',
         pastTopN: 3,
         upcomingTopN: 3,
         format: ["<h3 style='color:black'>", '*summary*', '</h3><p>', '*date*', ' <br/>@ ', '*location*', '<br/><i>', '*description*', "</i></p>"]
