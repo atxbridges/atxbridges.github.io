@@ -35,13 +35,21 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
   <script src="js/format-google-calendar.min.js"></script>
   <style>
-      .event_list li:after {
+  /*https://stackoverflow.com/questions/9620594/removing-ul-indentation-with-css*/
+    li:after {
       content: "";
       display: block;
-      height: 2px;
       width: 80%;
+      height: 2px;
       margin: 5px;
+      margin-bottom: 20px;
       background: #007397;
+    }
+    span.date{
+      font-size: 12px;
+    }
+    span.location{
+      font-size: 12px;
     }
   </style>
 
@@ -322,9 +330,9 @@
                   <br>
                    <div class="row" align="center" style="overflow: visible;">
                      <!-- style="color: white" -->
-                     <ul id="events-upcoming" class="event_list" style="list-style-type: none;">
+                     <ul id="events-upcoming" class="event_list" style="margin-left: 0; list-style: none; width:80%; padding: 0; overflow:hidden">
                      </ul>
-                     <ul id="events-past" class="event_list" style="list-style-type: none;">
+                     <ul id="events-past" class="event_list" style="margin-left: 0; list-style: none; width:80%; padding: 0; overflow:hidden">
                      </ul>
                      <!-- Embeded calendar (ugly) -->
                       <!-- <div class="row" align="center">
@@ -689,7 +697,8 @@
         pastHeading: '<span style="background:#007397; color:white">&nbsp;Past&nbsp;</span>',
         pastTopN: 3,
         upcomingTopN: 3,
-        format: ["<h3 style='color:black'>", '*summary*', '</h3><p>', '*date*', ' <br/>@ ', '*location*', '<br/><i>', '*description*', "</i></p>"]
+        // use p to avoid h2 showing too big in description
+        format: ["<h3 style='color:black'>", '*summary*', '</h3><i class="icon-clock"> </i>', '*date*', ' <br/><i class="icon-pin"> </i>', '*location*', '<br/><p><i><span class="event_info">', '*description*', "</span></i></p>"]
     });
    } );
    </script>
